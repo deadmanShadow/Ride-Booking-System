@@ -59,6 +59,42 @@ The API is designed with a modular structure to ensure clean and maintainable co
   - **Drivers** can accept, reject, and update the status of rides.
   - **Admins** can manage users and approve/suspend drivers.
 
+# API Endpoints
+
+## Authentication Routes
+
+- **POST /login**: Login with credentials.
+- **POST /refresh-token**: Get a new access token.
+- **POST /logout**: Logout from the application.
+- **POST /reset-password**: Reset password (Admin and Super Admin only).
+
+## Driver Routes
+
+- **POST /create**: Create a new driver (Admin/Super Admin only).
+- **GET /**: Get all drivers.
+- **GET /:driverSlug**: Get a single driver by slug.
+- **PATCH /:id**: Update a driver (Admin/Super Admin only).
+- **DELETE /:id**: Delete a driver (Admin/Super Admin only).
+- **POST /:riderSlug/accept-ride**: Accept a ride request (Admin/Super Admin/Driver).
+- **PATCH /ride-status/:driverSlug**: Update ride status (Admin/Super Admin/Driver).
+- **GET /:driverSlug/earnings**: View earnings history (Admin/Super Admin/Driver).
+- **PATCH /:riderSlug/cancel-ride**: Cancel a ride (Admin/Super Admin/Driver).
+- **PATCH /approve-suspend/:driverSlug**: Approve or suspend a driver (Admin/Super Admin only).
+- **PATCH /:driverSlug/set-availability**: Set driver availability (Admin/Super Admin/Driver).
+
+## Rider Routes
+
+- **POST /create**: Create a new rider (Admin/Super Admin only).
+- **POST /request-ride**: Request a ride (Admin/Super Admin/Rider).
+- **PATCH /cancel-ride/:riderSlug**: Cancel a ride (Admin/Super Admin/Rider).
+- **GET /ride-history/:riderSlug**: View ride history (Admin/Super Admin/Rider).
+
+## User Routes
+
+- **POST /register**: Register a new user.
+- **GET /all-users**: Get all users (Admin/Super Admin only).
+- **PATCH /:id**: Update user information (Admin/Super Admin/All roles).
+
 ## Technologies Used
 
 - **Node.js** and **Express.js**: For building the backend API and handling HTTP requests.
