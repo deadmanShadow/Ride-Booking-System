@@ -95,6 +95,12 @@ The API is designed with a modular structure to ensure clean and maintainable co
 - **GET /all-users**: Get all users (Admin/Super Admin only).
 - **PATCH /:id**: Update user information (Admin/Super Admin/All roles).
 
+### Super Admin Info:
+
+email: super@admin.com
+<br>
+password: 123456
+
 ## Technologies Used
 
 - **Node.js** and **Express.js**: For building the backend API and handling HTTP requests.
